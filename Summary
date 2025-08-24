@@ -1,0 +1,100 @@
+Title: AI Resume Analyzer with Smart Recommendations
+1. Introduction
+Recruitment is one of the most challenging and time-consuming processes in Human Resource (HR) management. Recruiters often receive hundreds of resumes for a single job position, making it difficult to filter and analyze them efficiently.
+This project, AI Resume Analyzer, is a web-based application built with Streamlit, NLP (Natural Language Processing), and Machine Learning techniques to parse resumes, extract key information, evaluate candidate profiles, and recommend skill-based improvements along with courses, certifications, and interview tips.
+
+2. Objectives
+The main objectives of this project are:
+To automate resume parsing and extract structured data (Name, Email, Skills, Experience, etc.).
+To classify resumes into relevant career fields such as Data Science, Web Development, Android, iOS, and UI/UX.
+To provide skill recommendations that can enhance the candidate’s profile.
+To recommend courses and certifications for improving employability.
+To calculate a Resume Score based on content quality.
+To provide interview and resume-writing video resources.
+To maintain an admin dashboard for recruiters to visualize candidate data.
+
+3. System Requirements
+3.1 Software Requirements
+Python 3.8+
+Libraries:
+streamlit, pandas, nltk, spacy==2.3.5, pyresparser, pdfminer3, pafy, plotly, pymysql, PIL, streamlit-tags
+Database: MySQL (for storing user data)
+NLP Models: SpaCy en_core_web_sm-2.3.1
+3.2 Hardware Requirements
+Processor: Intel i5 or higher
+RAM: Minimum 4 GB
+Storage: 500 MB free space
+
+4. System Design
+4.1 Architecture
+Frontend: Built using Streamlit, providing an interactive web interface.
+Backend: Resume parsing using PyResparser (NLP), PDF extraction using PDFMiner3, and MySQL integration.
+Database: User resume data (name, email, score, skills, recommendations) is stored in MySQL.
+Recommendation Engine: Matches extracted skills against predefined keyword lists for Data Science, Web Development, Android, iOS, and UI/UX.
+Visualization: Admins can view Pie-Charts and Data Reports using Plotly.
+4.2 Data Flow
+User uploads a resume (PDF) → System extracts information using NLP → Skills matched with keyword sets → Recommended skills and courses displayed → Resume score calculated → Results stored in MySQL → Admin can view analytics.
+5. Implementation
+5.1 Key Modules
+Resume Upload & Parsing
+Users upload resumes in PDF format.
+Extracts Name, Email, Contact, Skills, and Experience using pyresparser.
+Skill Extraction & Recommendation
+Predefined skill keywords for each field.
+Based on extracted skills, system predicts career field.
+Suggests additional skills for better employability.
+
+Course Recommendation
+Suggests certification courses from curated lists.
+Number of recommendations can be adjusted by the user.
+
+Resume Score Evaluation
+Criteria include presence of sections like Objective, Declaration, Hobbies, Achievements, Projects.
+Each section contributes to the total resume score.
+
+Admin Dashboard
+Recruiters can log in and view candidate data.
+Download reports in CSV format.
+Visualize field-wise distribution and candidate experience levels using Plotly charts.
+
+6. Results
+6.1 User Side
+Upload resume and view extracted data.
+Receive career field prediction (e.g., Data Science, Web Development).
+
+Get recommended skills & courses.
+Resume scored out of 100 based on quality.
+
+Watch curated YouTube videos for resume writing and interview preparation.
+6.2 Admin Side
+
+Secure login for recruiters.
+Access to stored candidate data.
+
+Download candidate database in CSV.
+Interactive visualizations:
+Pie Chart of Predicted Career Fields.
+Pie Chart of Candidate Experience Levels.
+
+7. Advantages
+Automates resume screening, saving recruiter time.
+Provides personalized recommendations to job seekers.
+Offers both skills improvement and career guidance.
+Creates a centralized resume database for recruiters.
+Lightweight and easy-to-use web application.
+
+8. Limitations
+Works only with PDF resumes.
+Relies on predefined keyword matching (may miss new/rare skills).
+Limited to five fields (Data Science, Web, Android, iOS, UI/UX).
+Resume score is rule-based, not AI-trained.
+
+9. Future Enhancements
+Use Machine Learning models (e.g., BERT, spaCy NER) for better skill classification.
+Support for multiple file formats (.docx, .txt).
+Expand recommendations to more fields (Cloud, Cybersecurity, DevOps).
+Add ATS (Applicant Tracking System) compliance check.
+Real-time integration with job portals.
+
+10. Conclusion
+The AI Resume Analyzer successfully automates resume analysis, recommends skills and courses, and helps candidates improve their profiles. It also aids recruiters in quickly filtering resumes and visualizing candidate data. While the current version is rule-based, the system can be extended with advanced AI models for even more accurate analysis.
